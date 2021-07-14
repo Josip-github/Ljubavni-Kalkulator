@@ -11,12 +11,18 @@ public class LjubavniKalkulator01 {
 	public LjubavniKalkulator01() {
 		String ime1 = JOptionPane.showInputDialog("Unesite svoje ime.");
 		String ime2 = JOptionPane.showInputDialog("Unesite ime svoje simpatije.");
-
-		usporediImena(ime1, ime2);
+		System.out.println("Prvo ime: " + ime1 + "; drugo ime: " + ime2);
+		
 		lista = pretvoriImeUNizBrojeva(ime1.toLowerCase(), ime2.toLowerCase());
 		System.out.println(lista);
+		
+		if (ime1.length() == ime2.length() || ime1.length() < ime2.length()) {
+			lista2 = ispisiPrvuPravilnuListu(ime1.toLowerCase(), ime2.toLowerCase(), lista);
+		}
 
-		lista2 = ispisiPrvuPravilnuListu(ime1.toLowerCase(), ime2.toLowerCase(), lista);
+		if (ime1.length() > ime2.length()) {
+			lista2 = LjubavniKalkulator03.ispisiPrvuPravilnuListu2(ime1.toLowerCase(), ime2.toLowerCase(), lista);
+		}
 
 		LjubavniKalkulator02.rekurzija(lista2);
 	}
@@ -42,11 +48,7 @@ public class LjubavniKalkulator01 {
 
 	private ArrayList<Integer> pretvoriImeUNizBrojeva(String ime1, String ime2) {
 		ArrayList<Integer> lista = new ArrayList<>();
-		if (ime1.length() == ime2.length() || ime1.length() < ime2.length()) {
-			spojImena = ime1 + ime2;
-		}else {
-			spojImena = ime2 + ime1;
-		}
+		spojImena = ime1 + ime2;
 		
 		char[] niz = spojImena.toCharArray();
 
@@ -65,7 +67,7 @@ public class LjubavniKalkulator01 {
 
 	String prvoIme, drugoIme;
 
-	private void usporediImena(String ime1, String ime2) {
+	/*private void usporediImena(String ime1, String ime2) {
 		if (ime1.length() == ime2.length() || ime1.length() < ime2.length()) {
 			prvoIme = ime1;
 			drugoIme = ime2;
@@ -74,7 +76,7 @@ public class LjubavniKalkulator01 {
 			drugoIme = ime1;
 		}
 		System.out.println("Prvo ime: " + prvoIme + "; drugo ime: " + drugoIme);
-	}
+	}*/
 	
 	public static void main(String[] args) {
 		
