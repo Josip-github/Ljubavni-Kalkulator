@@ -65,18 +65,6 @@ public class LjubavniKalkulator01 {
 		return lista;
 	}
 
-	String prvoIme, drugoIme;
-
-	/*private void usporediImena(String ime1, String ime2) {
-		if (ime1.length() == ime2.length() || ime1.length() < ime2.length()) {
-			prvoIme = ime1;
-			drugoIme = ime2;
-		} else {
-			prvoIme = ime2;
-			drugoIme = ime1;
-		}
-		System.out.println("Prvo ime: " + prvoIme + "; drugo ime: " + drugoIme);
-	}*/
 	
 	public static void main(String[] args) {
 		
